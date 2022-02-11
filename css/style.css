@@ -7,33 +7,116 @@ a{text-decoration: none; color: inherit;}
 
 
 .ttt-container{width: 600px; height: 600px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);}
-.ttt-container .ttt{width: 200px; height: 200px; border: 2px solid #333; overflow: hidden;}
-.ttt-container .ttt label{width: 100%; height: 100%; cursor: pointer; justify-content: center; align-items: center;}
+.ttt-container a{display: block; width: 100%; height: 100%;}
+.ttt-container .ttt{position: relative; width: 200px; height: 200px; border: 2px solid #333; overflow: hidden;}
+.ttt-container .ttt label{position: absolute; width: 100%; height: 100%; left: 0; top: 0; cursor: pointer; justify-content: center; align-items: center;}
 .ttt-container .ttt label .shape{font-size: 160px; text-align: center;}
 .ttt-container .ttt label .cross{color: #ff0000;}
 
 
-/* #ttt1:checked~ .ttt-container .ttt1 .circle,
-#ttt2:checked~ .ttt-container .ttt2 .circle,
-#ttt3:checked~ .ttt-container .ttt3 .circle,
-#ttt4:checked~ .ttt-container .ttt4 .circle,
-#ttt5:checked~ .ttt-container .ttt5 .circle,
-#ttt6:checked~ .ttt-container .ttt6 .circle,
-#ttt7:checked~ .ttt-container .ttt7 .circle,
-#ttt8:checked~ .ttt-container .ttt8 .circle,
-#ttt9:checked~ .ttt-container .ttt9 .circle{display: block;} */
+.ttt-container .ttt label::before{content: ''; font-weight: bold; font-size: 140px;}
+
+.ttt-container .ttt label[class*="-o"]{display: flex;}
+.ttt-container .ttt label{display: none;}
+/* .ttt-container .ttt .ttt-x{display: none;} */
+
+#ttt1-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt2-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt3-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt4-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt5-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt6-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt7-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt8-o:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt9-o:checked~ .ttt-container .ttt label[class*="-x"]{display: flex;}
+
+/* #ttt1-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt2-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt3-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt4-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt5-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt6-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt7-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt8-o:checked~ .ttt-container .ttt label[class*="-o"],
+#ttt9-o:checked~ .ttt-container .ttt label[class*="-o"]{display: none;} */
+
+
+#ttt1-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt2-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt3-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt4-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt5-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt6-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt7-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt8-x:checked~ .ttt-container .ttt.ttt label[class*="-o"],
+#ttt9-x:checked~ .ttt-container .ttt.ttt label[class*="-o"]{display: flex;}
+
+/* #ttt1-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt2-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt3-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt4-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt5-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt6-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt7-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt8-x:checked~ .ttt-container .ttt label[class*="-x"],
+#ttt9-x:checked~ .ttt-container .ttt label[class*="-x"]{display: none;} */
+
+
+
+
 
 :root{
     --player: red;
+    --content: 'X';
 }
 
-#ttt1:checked~ .ttt-container .ttt1 .cross,
-#ttt2:checked~ .ttt-container .ttt2 .cross,
-#ttt3:checked~ .ttt-container .ttt3 .cross,
-#ttt4:checked~ .ttt-container .ttt4 .cross,
-#ttt5:checked~ .ttt-container .ttt5 .cross,
-#ttt6:checked~ .ttt-container .ttt6 .cross,
-#ttt7:checked~ .ttt-container .ttt7 .cross,
-#ttt8:checked~ .ttt-container .ttt8 .cross,
-#ttt9:checked~ .ttt-container .ttt9 .cross{display: block; --player: blue; color: var(--player);}
+
+/* #circle:checked{--player: blue; --content: 'O';}
+#cross:checked{--player: red; --content: 'X';} */
+
+#chk:checked{--player: blue;}
+#chk:not(:checked){--player: #333;}
+
+/* #ttt1:checked~ .ttt-container .ttt1 label::before,
+#ttt2:checked~ .ttt-container .ttt2 label::before,
+#ttt3:checked~ .ttt-container .ttt3 label::before,
+#ttt4:checked~ .ttt-container .ttt4 label::before,
+#ttt5:checked~ .ttt-container .ttt5 label::before,
+#ttt6:checked~ .ttt-container .ttt6 label::before,
+#ttt7:checked~ .ttt-container .ttt7 label::before,
+#ttt8:checked~ .ttt-container .ttt8 label::before,
+#ttt9:checked~ .ttt-container .ttt9 label::before{content: var(--content); color: var(--player);} */
+
+
+/* #ttt1-o:checked~ #ttt1-x:checked~ h2{color: red;} */
+
+/* input[name="ttt3"]:not(:checked)~ h2{color: blue;} */
+
+#ttt1-o:checked~ .ttt-container .ttt1 .ttt1-o i,
+#ttt2-o:checked~ .ttt-container .ttt2 .ttt2-o i,
+#ttt3-o:checked~ .ttt-container .ttt3 .ttt3-o i,
+#ttt4-o:checked~ .ttt-container .ttt4 .ttt4-o i,
+#ttt5-o:checked~ .ttt-container .ttt5 .ttt5-o i,
+#ttt6-o:checked~ .ttt-container .ttt6 .ttt6-o i,
+#ttt7-o:checked~ .ttt-container .ttt7 .ttt7-o i,
+#ttt8-o:checked~ .ttt-container .ttt8 .ttt8-o i,
+#ttt9-o:checked~ .ttt-container .ttt9 .ttt9-o i{display: block;}
+
+#ttt1-x:checked~ .ttt-container .ttt1 .ttt1-x i,
+#ttt2-x:checked~ .ttt-container .ttt2 .ttt2-x i,
+#ttt3-x:checked~ .ttt-container .ttt3 .ttt3-x i,
+#ttt4-x:checked~ .ttt-container .ttt4 .ttt4-x i,
+#ttt5-x:checked~ .ttt-container .ttt5 .ttt5-x i,
+#ttt6-x:checked~ .ttt-container .ttt6 .ttt6-x i,
+#ttt7-x:checked~ .ttt-container .ttt7 .ttt7-x i,
+#ttt8-x:checked~ .ttt-container .ttt8 .ttt8-x i,
+#ttt9-x:checked~ .ttt-container .ttt9 .ttt9-x i{display: block;}
+
+
+
+input[name="ttt1"]:checked~ input[name="ttt2"]:checked~ input[name="ttt3"]:checked~ input[name="ttt4"]:checked~ input[name="ttt5"]:checked~ input[name="ttt6"]:checked~ input[name="ttt7"]:checked~ input[name="ttt8"]:checked~ input[name="ttt9"]:checked~ h2{color: red;}
+input[name="ttt1"]:checked~ input[name="ttt2"]:checked~ input[name="ttt3"]:checked~ input[name="ttt4"]:checked~ input[name="ttt5"]:checked~ input[name="ttt6"]:checked~ input[name="ttt7"]:checked~ input[name="ttt8"]:checked~ input[name="ttt9"]:checked~ .reset_btn{display: block;}
+
+
+
 

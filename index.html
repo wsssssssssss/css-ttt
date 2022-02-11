@@ -14,73 +14,110 @@
   </head>
   <body>
     <div id="root">
-      <input type="radio" name="bool" id="circle" checked>
-      <input type="radio" name="bool" id="cross">
-      <input type="radio" id="ttt1">
-      <input type="radio" id="ttt2">
-      <input type="radio" id="ttt3">
-      <input type="radio" id="ttt4">
-      <input type="radio" id="ttt5">
-      <input type="radio" id="ttt6">
-      <input type="radio" id="ttt7">
-      <input type="radio" id="ttt8">
-      <input type="radio" id="ttt9">
-      <div class="ttt-container grid">
-        <div class="ttt1 ttt">
-          <label class="flex" for="ttt1">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
+      <form>
+        <input type="radio" name="ttt1" id="ttt1-o">
+        <input type="radio" name="ttt1" id="ttt1-x"> <br>
+        <input type="radio" name="ttt2" id="ttt2-o">
+        <input type="radio" name="ttt2" id="ttt2-x"><br>
+        <input type="radio" name="ttt3" id="ttt3-o">
+        <input type="radio" name="ttt3" id="ttt3-x"><br>
+        <input type="radio" name="ttt4" id="ttt4-o">
+        <input type="radio" name="ttt4" id="ttt4-x"><br>
+        <input type="radio" name="ttt5" id="ttt5-o">
+        <input type="radio" name="ttt5" id="ttt5-x"><br>
+        <input type="radio" name="ttt6" id="ttt6-o">
+        <input type="radio" name="ttt6" id="ttt6-x"><br>
+        <input type="radio" name="ttt7" id="ttt7-o">
+        <input type="radio" name="ttt7" id="ttt7-x"><br>
+        <input type="radio" name="ttt8" id="ttt8-o">
+        <input type="radio" name="ttt8" id="ttt8-x"><br>
+        <input type="radio" name="ttt9" id="ttt9-o">
+        <input type="radio" name="ttt9" id="ttt9-x"><br>
+
+
+        <h2>게임종료</h2>
+        <input type="reset" class="reset_btn none" value="다시하기"> <br>
+        <i class="shape circle fa fa-circle-o"></i>
+        <i class="shape cross fa fa-close"></i>
+        
+        <div class="ttt-container grid">
+          <div class="ttt1 ttt">
+            <label class="ttt1-o none" for="ttt1-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt1-x none" for="ttt1-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt2 ttt">
+            <label class="ttt2-o none" for="ttt2-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt2-x none" for="ttt2-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt3 ttt">
+            <label class="ttt3-o none" for="ttt3-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt3-x none" for="ttt3-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt4 ttt">
+            <label class="ttt4-o none" for="ttt4-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt4-x none" for="ttt4-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt5 ttt">
+            <label class="ttt5-o none" for="ttt5-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt5-x none" for="ttt5-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt6 ttt">
+            <label class="ttt6-o none" for="ttt6-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt6-x none" for="ttt6-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt7 ttt">
+            <label class="ttt7-o none" for="ttt7-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt7-x none" for="ttt7-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt8 ttt">
+            <label class="ttt8-o none" for="ttt8-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt8-x none" for="ttt8-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
+          <div class="ttt9 ttt">
+            <label class="ttt9-o none" for="ttt9-o">
+              <i class="shape circle fa fa-circle-o none"></i>
+            </label>
+            <label class="ttt9-x none" for="ttt9-x">
+              <i class="shape cross fa fa-close none"></i>
+            </label>
+          </div>
         </div>
-        <div class="ttt2 ttt">
-          <label class="flex" for="ttt2">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt3 ttt">
-          <label class="flex" for="ttt3">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt4 ttt">
-          <label class="flex" for="ttt4">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt5 ttt">
-          <label class="flex" for="ttt5">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt6 ttt">
-          <label class="flex" for="ttt6">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt7 ttt">
-          <label class="flex" for="ttt7">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt8 ttt">
-          <label class="flex" for="ttt8">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-        <div class="ttt9 ttt">
-          <label class="flex" for="ttt9">
-            <i class="shape circle fa fa-circle-o none"></i>
-            <i class="shape cross fa fa-close none"></i>
-          </label>
-        </div>
-      </div>
+
+      </form>
+      
+
     </div>
   </body>
 </html>
