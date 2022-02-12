@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+
+        .red-box {
+            background: red;
+        }
+
+        .blue-box {
+            background: blue;
+        }
+
+        #ttt1-o:checked~.blue-box,
+        #ttt2-o:checked~.blue-box,
+        #ttt3-o:checked~.blue-box,
+        #ttt4-o:checked~.blue-box,
+        #ttt5-o:checked~.blue-box,
+        #ttt6-o:checked~.blue-box,
+        #ttt7-o:checked~.blue-box,
+        #ttt8-o:checked~.blue-box,
+        #ttt9-o:checked~.blue-box {
+            display: block;
+        }
+
+
+        #ttt1-x:checked~.red-box,
+        #ttt2-x:checked~.red-box,
+        #ttt3-x:checked~.red-box,
+        #ttt4-x:checked~.red-box,
+        #ttt5-x:checked~.red-box,
+        #ttt6-x:checked~.red-box,
+        #ttt7-x:checked~.red-box,
+        #ttt8-x:checked~.red-box,
+        #ttt9-x:checked~.red-box {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <input type="radio" id="ttt">
+    <input type="radio" id="ttt2"> <br>
+    <!-- <input type="radio" name="ttt2" id="ttt2-o">
+    <input type="radio" name="ttt2" id="ttt2-x"><br>
+    <input type="radio" name="ttt3" id="ttt3-o">
+    <input type="radio" name="ttt3" id="ttt3-x"><br>
+    <input type="radio" name="ttt4" id="ttt4-o">
+    <input type="radio" name="ttt4" id="ttt4-x"><br>
+    <input type="radio" name="ttt5" id="ttt5-o">
+    <input type="radio" name="ttt5" id="ttt5-x"><br>
+    <input type="radio" name="ttt6" id="ttt6-o">
+    <input type="radio" name="ttt6" id="ttt6-x"><br>
+    <input type="radio" name="ttt7" id="ttt7-o">
+    <input type="radio" name="ttt7" id="ttt7-x"><br>
+    <input type="radio" name="ttt8" id="ttt8-o">
+    <input type="radio" name="ttt8" id="ttt8-x"><br>
+    <input type="radio" name="ttt9" id="ttt9-o">
+    <input type="radio" name="ttt9" id="ttt9-x"><br> -->
+
+    <label for="ttt">
+        dsa
+    </label>
 </body>
+
 </html>
