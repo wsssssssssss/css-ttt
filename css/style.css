@@ -1,0 +1,212 @@
+*{padding: 0; margin: 0; box-sizing: border-box; color: inherit;}
+
+.grid{display: grid;}
+
+#root{max-width: 900px; margin: 0 auto;}
+.container{padding-top: 4rem; width: 100%; height: 900px;grid-template-columns: repeat(3, 1fr); }
+.item{border: 3px solid #000; }
+
+.item:nth-of-type(1),
+.item:nth-of-type(3),
+.item:nth-of-type(5),
+.item:nth-of-type(7),
+.item:nth-of-type(9),
+.item:nth-of-type(11),
+.item:nth-of-type(13),
+.item:nth-of-type(15),
+.item:nth-of-type(17){background: red;}
+
+.item:nth-of-type(2),
+.item:nth-of-type(4),
+.item:nth-of-type(6),
+.item:nth-of-type(8),
+.item:nth-of-type(10),
+.item:nth-of-type(12),
+.item:nth-of-type(14),
+.item:nth-of-type(16),
+.item:nth-of-type(18){background: blue;}
+
+.container .item{display: none;}
+
+
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe1-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe2-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe3-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe4-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe5-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe6-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe7-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe8-red:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe9-red:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+/* blue */
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe1-blue"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe1-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe2-blue"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe2-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe3-blue"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe3-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe4-blue"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe4-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe5-blue"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe5-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe6-blue"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe6-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe7-blue"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe7-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe8-blue"],
+#tic-tac-toe8-blue:checked~.container label[for="tic-tac-toe9-red"]{display: block;}
+
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe1-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe2-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe3-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe4-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe5-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe6-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe7-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe8-red"],
+#tic-tac-toe9-blue:checked~.container label[for="tic-tac-toe9-blue"]{display: block;}
+
