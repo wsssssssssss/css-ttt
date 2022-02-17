@@ -26,7 +26,6 @@ a{text-decoration: none; color: inherit;}
 .ttt-container .game_over input:hover{background: #000; color: #fff; transition: .3s;}
 
 
-
 /* O, X 각각 클릭 했을때 도형 보이게 하는거 */
 input[name="ttt1"]:checked~ .ttt-container .ttt1 .shapes,
 input[name="ttt2"]:checked~ .ttt-container .ttt2 .shapes,
@@ -193,6 +192,26 @@ input[name="ttt1"]:checked~ input[name="ttt2"]:checked~ input[name="ttt3"]:check
 #ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line6{display: block; animation: line6 .7s forwards;}
 #ttt1-x:checked~ #ttt5-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line7{display: block; animation: line7 .7s forwards;}
 #ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line8{display: block; animation: line8 .7s forwards;}
+
+/* 중복으로 선이 긋어지는 라인 처리 */
+
+/* O 중복 처리 */
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt2-o:checked~ #ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ #ttt8-o:checked~ .ttt-container .lines .line2{display: none !important;} 
+#ttt1-o:checked~ #ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line8{display: none !important;} 
+
+/* X 중복 처리(순서가 O부터라서 이코드에는 필요 없음) */
+/* #ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt2-x:checked~ #ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ #ttt8-x:checked~ .ttt-container .lines .line2{display: none !important;} 
+#ttt1-x:checked~ #ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line8{display: none !important;}  */
 
 
 /* 선그리는거 애니메이션 */
