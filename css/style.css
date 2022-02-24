@@ -1,0 +1,278 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+.flex{display: flex;}
+.grid{display: grid;}
+.none{display: none;}
+
+
+#root input[id*="ttt"]{display: none;}
+#root .title{text-align: center; font-size: 70px; margin: 60px auto;}
+.ttt-container{position: relative; width: 600px; height: 600px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);}
+.ttt-container .ttt{position: relative; width: 200px; height: 200px; border: 2px solid #333; overflow: hidden;}
+.ttt-container .ttt label{display: block; width: 100%; height: 100%; cursor: pointer;}
+
+.ttt-container .ttt .shapes{position: absolute; left: 0; top: 0; width: 100%; height: 100%; justify-content: center; align-items: center;}
+.ttt-container .ttt .shapes .cross line{stroke: #ff0000; stroke-width: 30px;}
+.ttt-container .ttt .shapes .circle circle{stroke: #0000ff; stroke-width: 20px; fill: none;}
+
+.ttt-container .lines{position: absolute; z-index: -1;}
+.ttt-container .lines line{display: none; stroke: #ff0000; stroke-width: 10px;}
+
+.ttt-container .game_over{position: absolute; width: 100%; height: 100%; left: 0; top: 0; overflow: hidden; background: rgba(0, 0, 0, .4); flex-direction: column; justify-content: center; align-items: center; gap: 15px; z-index: 10;}
+.ttt-container .game_over h2{font-size: 45px; color: #fff;}
+.ttt-container .game_over p{font-size: 25px; color: #fff; font-weight: bold;}
+.ttt-container .game_over input{padding: 10px 15px; font-size: 20px; background: #fff; border: none; outline: none; border-radius: 5px; cursor: pointer; transition: .3s;}
+.ttt-container .game_over input:hover{background: #000; color: #fff; transition: .3s;}
+
+
+/* O, X 각각 클릭 했을때 도형 보이게 하는거 */
+input[name="ttt1"]:checked~ .ttt-container .ttt1 .shapes,
+input[name="ttt2"]:checked~ .ttt-container .ttt2 .shapes,
+input[name="ttt3"]:checked~ .ttt-container .ttt3 .shapes,
+input[name="ttt4"]:checked~ .ttt-container .ttt4 .shapes,
+input[name="ttt5"]:checked~ .ttt-container .ttt5 .shapes,
+input[name="ttt6"]:checked~ .ttt-container .ttt6 .shapes,
+input[name="ttt7"]:checked~ .ttt-container .ttt7 .shapes,
+input[name="ttt8"]:checked~ .ttt-container .ttt8 .shapes,
+input[name="ttt9"]:checked~ .ttt-container .ttt9 .shapes{display: flex;}
+
+#ttt1-o:checked~ .ttt-container .ttt1 .shapes .circle,
+#ttt2-o:checked~ .ttt-container .ttt2 .shapes .circle,
+#ttt3-o:checked~ .ttt-container .ttt3 .shapes .circle,
+#ttt4-o:checked~ .ttt-container .ttt4 .shapes .circle,
+#ttt5-o:checked~ .ttt-container .ttt5 .shapes .circle,
+#ttt6-o:checked~ .ttt-container .ttt6 .shapes .circle,
+#ttt7-o:checked~ .ttt-container .ttt7 .shapes .circle,
+#ttt8-o:checked~ .ttt-container .ttt8 .shapes .circle,
+#ttt9-o:checked~ .ttt-container .ttt9 .shapes .circle{display: block;}
+
+
+#ttt1-x:checked~ .ttt-container .ttt1 .shapes .cross,
+#ttt2-x:checked~ .ttt-container .ttt2 .shapes .cross,
+#ttt3-x:checked~ .ttt-container .ttt3 .shapes .cross,
+#ttt4-x:checked~ .ttt-container .ttt4 .shapes .cross,
+#ttt5-x:checked~ .ttt-container .ttt5 .shapes .cross,
+#ttt6-x:checked~ .ttt-container .ttt6 .shapes .cross,
+#ttt7-x:checked~ .ttt-container .ttt7 .shapes .cross,
+#ttt8-x:checked~ .ttt-container .ttt8 .shapes .cross,
+#ttt9-x:checked~ .ttt-container .ttt9 .shapes .cross{display: block;}
+
+
+/* X 도형 애니메이션 */
+#ttt1-x:checked~ .ttt-container .ttt1 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt1-x:checked~ .ttt-container .ttt1 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt2-x:checked~ .ttt-container .ttt2 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt2-x:checked~ .ttt-container .ttt2 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt3-x:checked~ .ttt-container .ttt3 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt3-x:checked~ .ttt-container .ttt3 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt4-x:checked~ .ttt-container .ttt4 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt4-x:checked~ .ttt-container .ttt4 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt5-x:checked~ .ttt-container .ttt5 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt5-x:checked~ .ttt-container .ttt5 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt6-x:checked~ .ttt-container .ttt6 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt6-x:checked~ .ttt-container .ttt6 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt7-x:checked~ .ttt-container .ttt7 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt7-x:checked~ .ttt-container .ttt7 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt8-x:checked~ .ttt-container .ttt8 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt8-x:checked~ .ttt-container .ttt8 .shapes .cross .line2{animation: line8 1s forwards;}
+
+#ttt9-x:checked~ .ttt-container .ttt9 .shapes .cross .line1{animation: line7 1s forwards;}
+#ttt9-x:checked~ .ttt-container .ttt9 .shapes .cross .line2{animation: line8 1s forwards;}
+
+/* O 도형 애니메이션 */
+#ttt1-o:checked~ .ttt-container .ttt1 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt2-o:checked~ .ttt-container .ttt2 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt3-o:checked~ .ttt-container .ttt3 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt4-o:checked~ .ttt-container .ttt4 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt5-o:checked~ .ttt-container .ttt5 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt6-o:checked~ .ttt-container .ttt6 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt7-o:checked~ .ttt-container .ttt7 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt8-o:checked~ .ttt-container .ttt8 .shapes .circle{animation: circle 1s linear forwards;}
+#ttt9-o:checked~ .ttt-container .ttt9 .shapes .circle{animation: circle 1s linear forwards;}
+
+
+/* O, X 턴 바꾸기 */
+input:checked~ .ttt-container .ttt label[class*="-o"]{display: none;}
+input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: block;}
+input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: none;}
+input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: block;}
+input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: none;}
+input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: block;}
+input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: none;}
+input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: block;}
+input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ input:checked~ .ttt-container .ttt label[class*="-o"]{display: none;}
+
+
+
+/* O가 이겼을때 */
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ .ttt-container .game_over,
+#ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ .ttt-container .game_over,
+#ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .game_over,
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .game_over,
+#ttt2-o:checked~ #ttt5-o:checked~ #ttt8-o:checked~ .ttt-container .game_over,
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .game_over,
+#ttt1-o:checked~ #ttt5-o:checked~ #ttt9-o:checked~ .ttt-container .game_over,
+#ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ .ttt-container .game_over{display: flex;}
+
+
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ .ttt-container .game_over .Ovic,
+#ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ .ttt-container .game_over .Ovic,
+#ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .game_over .Ovic,
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .game_over .Ovic,
+#ttt2-o:checked~ #ttt5-o:checked~ #ttt8-o:checked~ .ttt-container .game_over .Ovic,
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .game_over .Ovic,
+#ttt1-o:checked~ #ttt5-o:checked~ #ttt9-o:checked~ .ttt-container .game_over .Ovic,
+#ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ .ttt-container .game_over .Ovic{display: block;}
+
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ .ttt-container .lines,
+#ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ .ttt-container .lines,
+#ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines,
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .lines,
+#ttt2-o:checked~ #ttt5-o:checked~ #ttt8-o:checked~ .ttt-container .lines,
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .lines,
+#ttt1-o:checked~ #ttt5-o:checked~ #ttt9-o:checked~ .ttt-container .lines,
+#ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ .ttt-container .lines{z-index: 9;}
+
+
+/* X가 이겼을때 */
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ .ttt-container .game_over,
+#ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ .ttt-container .game_over,
+#ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .game_over,
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .game_over,
+#ttt2-x:checked~ #ttt5-x:checked~ #ttt8-x:checked~ .ttt-container .game_over,
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .game_over,
+#ttt1-x:checked~ #ttt5-x:checked~ #ttt9-x:checked~ .ttt-container .game_over,
+#ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ .ttt-container .game_over{display: flex;}
+
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ .ttt-container .game_over .Xvic,
+#ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ .ttt-container .game_over .Xvic,
+#ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .game_over .Xvic,
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .game_over .Xvic,
+#ttt2-x:checked~ #ttt5-x:checked~ #ttt8-x:checked~ .ttt-container .game_over .Xvic,
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .game_over .Xvic,
+#ttt1-x:checked~ #ttt5-x:checked~ #ttt9-x:checked~ .ttt-container .game_over .Xvic,
+#ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ .ttt-container .game_over .Xvic{display: block;}
+
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ .ttt-container .lines,
+#ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ .ttt-container .lines,
+#ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines,
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .lines,
+#ttt2-x:checked~ #ttt5-x:checked~ #ttt8-x:checked~ .ttt-container .lines,
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines,
+#ttt1-x:checked~ #ttt5-x:checked~ #ttt9-x:checked~ .ttt-container .lines,
+#ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ .ttt-container .lines{z-index: 9;}
+
+
+/* 게임 종료(승패 결정X) 시 실행 */
+input[name="ttt1"]:checked~ input[name="ttt2"]:checked~ input[name="ttt3"]:checked~ input[name="ttt4"]:checked~ input[name="ttt5"]:checked~ input[name="ttt6"]:checked~ input[name="ttt7"]:checked~ input[name="ttt8"]:checked~ input[name="ttt9"]:checked~ .ttt-container .game_over{display: flex;}
+
+/* 선긋기 */
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ .ttt-container .lines .line1{display: block; animation: line1 .7s forwards;}
+#ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ .ttt-container .lines .line2{display: block; animation: line2 .7s forwards;}
+#ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: block; animation: line3 .7s forwards;}
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .lines .line4{display: block; animation: line4 .7s forwards;}
+#ttt2-o:checked~ #ttt5-o:checked~ #ttt8-o:checked~ .ttt-container .lines .line5{display: block; animation: line5 .7s forwards;}
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line6{display: block; animation: line6 .7s forwards;}
+#ttt1-o:checked~ #ttt5-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line7{display: block; animation: line7 .7s forwards;}
+#ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ .ttt-container .lines .line8{display: block; animation: line8 .7s forwards;}
+
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ .ttt-container .lines .line1{display: block; animation: line1 .7s forwards;}
+#ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ .ttt-container .lines .line2{display: block; animation: line2 .7s forwards;}
+#ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: block; animation: line3 .7s forwards;}
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line4{display: block; animation: line4 .7s forwards;}
+#ttt2-x:checked~ #ttt5-x:checked~ #ttt8-x:checked~ .ttt-container .lines .line5{display: block; animation: line5 .7s forwards;}
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line6{display: block; animation: line6 .7s forwards;}
+#ttt1-x:checked~ #ttt5-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line7{display: block; animation: line7 .7s forwards;}
+#ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line8{display: block; animation: line8 .7s forwards;}
+
+/* 중복으로 선이 긋어지는 라인 처리 */
+
+/* O 중복 처리 */
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+
+#ttt1-o:checked~ #ttt2-o:checked~ #ttt3-o:checked~ #ttt5-o:checked~ #ttt8-o:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt2-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-o:checked~ #ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line2{display: none !important;}
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ #ttt7-o:checked~ .ttt-container .lines .line2{display: none !important;}
+
+#ttt1-o:checked~ #ttt4-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-o:checked~ #ttt6-o:checked~ #ttt7-o:checked~ #ttt8-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt2-o:checked~ #ttt4-o:checked~ #ttt5-o:checked~ #ttt6-o:checked~ #ttt8-o:checked~ .ttt-container .lines .line2{display: none !important;} 
+#ttt1-o:checked~ #ttt3-o:checked~ #ttt5-o:checked~ #ttt7-o:checked~ #ttt9-o:checked~ .ttt-container .lines .line8{display: none !important;} 
+
+/* X 중복 처리(순서가 O부터라서 이코드에는 필요 없음) */
+/* #ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+
+#ttt1-x:checked~ #ttt2-x:checked~ #ttt3-x:checked~ #ttt5-x:checked~ #ttt8-x:checked~ .ttt-container .lines .line1{display: none !important;}
+#ttt2-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-x:checked~ #ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line2{display: none !important;}
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ #ttt7-x:checked~ .ttt-container .lines .line2{display: none !important;}
+
+#ttt1-x:checked~ #ttt4-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt3-x:checked~ #ttt6-x:checked~ #ttt7-x:checked~ #ttt8-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line3{display: none !important;}
+#ttt2-x:checked~ #ttt4-x:checked~ #ttt5-x:checked~ #ttt6-x:checked~ #ttt8-x:checked~ .ttt-container .lines .line2{display: none !important;} 
+#ttt1-x:checked~ #ttt3-x:checked~ #ttt5-x:checked~ #ttt7-x:checked~ #ttt9-x:checked~ .ttt-container .lines .line8{display: none !important;}  */
+
+
+/* 선그리는거 애니메이션 */
+@keyframes line1 {
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(0);}
+}
+
+@keyframes line2 {
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(0);}
+}
+
+@keyframes line3 {
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(0);}
+}
+
+@keyframes line4 {
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes line5 {
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes line6 {
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes line7 {
+    0%{transform: translate(-100%, -100%);}
+    100%{transform: translate(0);}
+}
+
+@keyframes line8 {
+    0%{transform: translate(100%, -100%);}
+    100%{transform: translate(0);}
+}
+
+/* 원 애니메이션 */
+@keyframes circle{
+    0% {clip-path: polygon(50% 50%, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 50%);}
+    12.5% {clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 50% 50%);}
+    37.5% {clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 50%);}
+    62.5% {clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 0 100%, 0 100%, 0 100%, 50% 50%);}
+    87.5% {clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 0 100%, 0 0, 0 0, 50% 50%);}
+    100% {clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 0, 50% 50%);}
+}

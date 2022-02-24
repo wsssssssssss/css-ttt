@@ -1,17 +1,176 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="tic tac toe"
-    />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>tic tac toe</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="tic tac toe" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>tic tac toe</title>
+</head>
+
+<body>
+  <div id="root">
+    <h1 class="title">tic tac toe</h1>
+    <form>
+      <input type="radio" name="ttt1" id="ttt1-o">
+      <input type="radio" name="ttt1" id="ttt1-x"> 
+      <input type="radio" name="ttt2" id="ttt2-o">
+      <input type="radio" name="ttt2" id="ttt2-x">
+      <input type="radio" name="ttt3" id="ttt3-o">
+      <input type="radio" name="ttt3" id="ttt3-x">
+      <input type="radio" name="ttt4" id="ttt4-o">
+      <input type="radio" name="ttt4" id="ttt4-x">
+      <input type="radio" name="ttt5" id="ttt5-o">
+      <input type="radio" name="ttt5" id="ttt5-x">
+      <input type="radio" name="ttt6" id="ttt6-o">
+      <input type="radio" name="ttt6" id="ttt6-x">
+      <input type="radio" name="ttt7" id="ttt7-o">
+      <input type="radio" name="ttt7" id="ttt7-x">
+      <input type="radio" name="ttt8" id="ttt8-o">
+      <input type="radio" name="ttt8" id="ttt8-x">
+      <input type="radio" name="ttt9" id="ttt9-o">
+      <input type="radio" name="ttt9" id="ttt9-x">
+      
+      <div class="ttt-container grid">
+        <div class="ttt1 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt1-o" for="ttt1-o"></label>
+          <label class="ttt1-x" for="ttt1-x"></label>
+        </div>
+        <div class="ttt2 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt2-o" for="ttt2-o"></label>
+          <label class="ttt2-x" for="ttt2-x"></label>
+        </div>
+        <div class="ttt3 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt3-o" for="ttt3-o"></label>
+          <label class="ttt3-x" for="ttt3-x"></label>
+        </div>
+        <div class="ttt4 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt4-o" for="ttt4-o"></label>
+          <label class="ttt4-x" for="ttt4-x"></label>
+        </div>
+        <div class="ttt5 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt5-o" for="ttt5-o"></label>
+          <label class="ttt5-x" for="ttt5-x"></label>
+        </div>
+        <div class="ttt6 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt6-o" for="ttt6-o"></label>
+          <label class="ttt6-x" for="ttt6-x"></label>
+        </div>
+        <div class="ttt7 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt7-o" for="ttt7-o"></label>
+          <label class="ttt7-x" for="ttt7-x"></label>
+        </div>
+        <div class="ttt8 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt8-o" for="ttt8-o"></label>
+          <label class="ttt8-x" for="ttt8-x"></label>
+        </div>
+        <div class="ttt9 ttt">
+          <div class="shapes none">
+            <svg class="circle none" width="200" height="200">
+              <circle cx="100" cy="100" r="55" />
+            </svg>
+            <svg class="cross none" width="100" height="100">
+              <line class="line1" x1="0" y1="0" x2="100" y2="100" />
+              <line class="line2" x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+          </div>
+          <label class="ttt9-o" for="ttt9-o"></label>
+          <label class="ttt9-x" for="ttt9-x"></label>
+        </div>
+
+        <svg class="lines" width="600" height="600">
+          <line class="line1" x1="0" y1="100" x2="600" y2="100" />
+          <line class="line2" x1="0" y1="300" x2="600" y2="300" />
+          <line class="line3" x1="0" y1="500" x2="600" y2="500" />
+          <line class="line4" x1="100" y1="0" x2="100" y2="600" />
+          <line class="line5" x1="300" y1="0" x2="300" y2="600" />
+          <line class="line6" x1="500" y1="0" x2="500" y2="600" />
+          <line class="line7" x1="0" y1="0" x2="600" y2="600" />
+          <line class="line8" x1="600" y1="0" x2="0" y2="600" />
+        </svg>
+        <div class="game_over none">
+          <h2>게임종료</h2>
+          <p class="Ovic none">결과: O 승리</p>
+          <p class="Xvic none">결과: X 승리</p>
+          <p class="tie none">결과: 무승부</p>
+          <input type="reset" class="reset_btn" value="다시하기"> <br>  
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
 </html>
