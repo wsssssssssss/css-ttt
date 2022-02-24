@@ -1,0 +1,173 @@
+*{padding: 0; margin: 0; box-sizing: border-box; color: inherit;}
+
+.grid{display: grid;}
+.flex{display: flex;}
+/* svg{display: none ;} */
+input{display: none;}
+#root{margin: 10rem auto; width: 600px; height: 600px;}
+#root .title{text-align: center; font-size: 3rem; padding-bottom: 1rem;}
+.container{   position: relative; grid-template-columns: repeat(3, 1fr); }
+.item{position: relative; width: 200px; height: 200px; border: 3px solid #000; overflow: hidden;} 
+.item label{display: block; width: 100%; height: 100%; cursor: pointer; cursor: pointer;}
+.item .animationSvg{position: absolute; display: none;}
+
+.gameover{display: none; position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.377); flex-direction: column; justify-content: center; align-items: center; }
+.gameover .endTxt{display: none;}
+.gameover .redEnd{color: red;}
+.gameover .blueEnd{color: blue;}
+.gameover .reset{padding: 10px; background: skyblue; color: #333; border-radius: 4px;}
+
+.endLine{position: absolute; width: 100%; height: 100%; z-index: 10;  display: none;}
+
+/* 턴바꾸기 */
+input:checked~.container .item .red{display: none;}
+input:checked~input:checked~.container .item .red{display: block;}
+input:checked~input:checked~input:checked~.container .item .red{display: none;}
+input:checked~input:checked~input:checked~input:checked~.container .item .red{display: block;}
+input:checked~input:checked~input:checked~input:checked~input:checked~.container .item .red{display: none;}
+input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~.container .item .red{display: block;}
+input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~.container .item .red{display: none;}
+input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~.container .item .red{display: block;}
+input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~.container .item .red{display: none;}
+
+/* red가 이겼을때 */
+#tic-tac-toe1-red:checked~#tic-tac-toe2-red:checked~#tic-tac-toe3-red:checked~.container .gameover,
+#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~.container .gameover,
+#tic-tac-toe7-red:checked~#tic-tac-toe8-red:checked~#tic-tac-toe9-red:checked~.container .gameover,
+#tic-tac-toe1-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe7-red:checked~.container .gameover,
+#tic-tac-toe2-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe8-red:checked~.container .gameover,
+#tic-tac-toe3-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe9-red:checked~.container .gameover,
+#tic-tac-toe1-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe9-red:checked~.container .gameover,
+#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~.container .gameover{display: flex;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe2-red:checked~#tic-tac-toe3-red:checked~.container .gameover .redEnd,
+#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~.container .gameover .redEnd,
+#tic-tac-toe7-red:checked~#tic-tac-toe8-red:checked~#tic-tac-toe9-red:checked~.container .gameover .redEnd,
+#tic-tac-toe1-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe7-red:checked~.container .gameover .redEnd,
+#tic-tac-toe2-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe8-red:checked~.container .gameover .redEnd,
+#tic-tac-toe3-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe9-red:checked~.container .gameover .redEnd,
+#tic-tac-toe1-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe9-red:checked~.container .gameover .redEnd,
+#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~.container .gameover .redEnd{display: flex;}
+
+
+/* blue가 이겼을때 */
+#tic-tac-toe1-blue:checked~#tic-tac-toe2-blue:checked~#tic-tac-toe3-blue:checked~.container .gameover, 
+#tic-tac-toe4-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe6-blue:checked~.container .gameover, 
+#tic-tac-toe7-blue:checked~#tic-tac-toe8-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover, 
+#tic-tac-toe1-blue:checked~#tic-tac-toe4-blue:checked~#tic-tac-toe7-blue:checked~.container .gameover, 
+#tic-tac-toe2-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe8-blue:checked~.container .gameover, 
+#tic-tac-toe3-blue:checked~#tic-tac-toe6-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover, 
+#tic-tac-toe1-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover, 
+#tic-tac-toe3-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe7-blue:checked~.container .gameover{display: flex;} 
+
+#tic-tac-toe1-blue:checked~#tic-tac-toe2-blue:checked~#tic-tac-toe3-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe4-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe6-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe7-blue:checked~#tic-tac-toe8-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe1-blue:checked~#tic-tac-toe4-blue:checked~#tic-tac-toe7-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe2-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe8-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe3-blue:checked~#tic-tac-toe6-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe1-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe9-blue:checked~.container .gameover .blueEnd,
+#tic-tac-toe3-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe7-blue:checked~.container .gameover .blueEnd{display: flex;}
+
+
+/* 마지막선 보이기 */
+#tic-tac-toe1-red:checked~#tic-tac-toe2-red:checked~#tic-tac-toe3-red:checked~.container .endLine,
+#tic-tac-toe1-blue:checked~#tic-tac-toe2-blue:checked~#tic-tac-toe3-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~.container .endLine,
+#tic-tac-toe4-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe6-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe7-red:checked~#tic-tac-toe8-red:checked~#tic-tac-toe9-red:checked~.container .endLine,
+#tic-tac-toe7-blue:checked~#tic-tac-toe8-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe7-red:checked~.container .endLine,
+#tic-tac-toe1-blue:checked~#tic-tac-toe4-blue:checked~#tic-tac-toe7-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe2-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe8-red:checked~.container .endLine,
+#tic-tac-toe2-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe8-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe3-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe9-red:checked~.container .endLine,
+#tic-tac-toe3-blue:checked~#tic-tac-toe6-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe9-red:checked~.container .endLine,
+#tic-tac-toe1-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~.container .endLine,
+#tic-tac-toe3-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe7-blue:checked~.container .endLine{display: block;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe2-red:checked~#tic-tac-toe3-red:checked~.container .endLine .line1,
+#tic-tac-toe1-blue:checked~#tic-tac-toe2-blue:checked~#tic-tac-toe3-blue:checked~.container .endLine .line1{animation: dash 3s forwards;}
+
+#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~.container .endLine .line2,
+#tic-tac-toe4-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe6-blue:checked~.container .endLine .line2{animation: dash 3s forwards;}
+
+#tic-tac-toe7-red:checked~#tic-tac-toe8-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line3,
+#tic-tac-toe7-blue:checked~#tic-tac-toe8-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine .line3{animation: dash 3s forwards;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe7-red:checked~.container .endLine .line4,
+#tic-tac-toe1-blue:checked~#tic-tac-toe4-blue:checked~#tic-tac-toe7-blue:checked~.container .endLine .line4{animation: dash 3s forwards;}
+
+#tic-tac-toe2-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe8-red:checked~.container .endLine .line5,
+#tic-tac-toe2-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe8-blue:checked~.container .endLine .line5{animation: dash 3s forwards;}
+
+#tic-tac-toe3-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line6,
+#tic-tac-toe3-blue:checked~#tic-tac-toe6-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine .line6{animation: dash 3s forwards;}
+
+#tic-tac-toe1-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line7,
+#tic-tac-toe1-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe9-blue:checked~.container .endLine .line7{animation: dash 3s forwards;}
+
+#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~.container .endLine .line8,
+#tic-tac-toe3-blue:checked~#tic-tac-toe5-blue:checked~#tic-tac-toe7-blue:checked~.container .endLine .line8{animation: dash 3s forwards;}
+
+/* 다 클릭되었을때  */
+input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~input:checked~.container .gameover{display: flex;}
+
+/* 중복되었을때 */
+#tic-tac-toe1-red:checked~#tic-tac-toe2-red:checked~#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe8-red:checked~.container .endLine .line5{display: none !important;}
+#tic-tac-toe3-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line6{display: none !important;}
+#tic-tac-toe2-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~#tic-tac-toe8-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line5{display: none !important;}
+#tic-tac-toe1-red:checked~#tic-tac-toe4-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe6-red:checked~#tic-tac-toe7-red:checked~.container .endLine .line4{display: none !important;}
+#tic-tac-toe1-red:checked~#tic-tac-toe3-red:checked~#tic-tac-toe5-red:checked~#tic-tac-toe7-red:checked~#tic-tac-toe9-red:checked~.container .endLine .line7{display: none !important;}
+
+
+/* 애니메이션 초기화? */
+line,circle{stroke-dasharray: 1000; stroke-dashoffset: 1000;}
+
+/* svg보이게하기 */
+input[name="tic-tac-toe1"]:checked~.container .tic-tac-toe-item1 svg,
+input[name="tic-tac-toe2"]:checked~.container .tic-tac-toe-item2 svg,
+input[name="tic-tac-toe3"]:checked~.container .tic-tac-toe-item3 svg,
+input[name="tic-tac-toe4"]:checked~.container .tic-tac-toe-item4 svg,
+input[name="tic-tac-toe5"]:checked~.container .tic-tac-toe-item5 svg,
+input[name="tic-tac-toe6"]:checked~.container .tic-tac-toe-item6 svg,
+input[name="tic-tac-toe7"]:checked~.container .tic-tac-toe-item7 svg,
+input[name="tic-tac-toe8"]:checked~.container .tic-tac-toe-item8 svg,
+input[name="tic-tac-toe9"]:checked~.container .tic-tac-toe-item9 svg{display: block;}
+
+/* red그리기 */
+#tic-tac-toe1-red:checked~.container .tic-tac-toe-item1 circle,
+#tic-tac-toe2-red:checked~.container .tic-tac-toe-item2 circle,
+#tic-tac-toe3-red:checked~.container .tic-tac-toe-item3 circle,
+#tic-tac-toe4-red:checked~.container .tic-tac-toe-item4 circle,
+#tic-tac-toe5-red:checked~.container .tic-tac-toe-item5 circle,
+#tic-tac-toe6-red:checked~.container .tic-tac-toe-item6 circle,
+#tic-tac-toe7-red:checked~.container .tic-tac-toe-item7 circle,
+#tic-tac-toe8-red:checked~.container .tic-tac-toe-item8 circle,
+#tic-tac-toe9-red:checked~.container .tic-tac-toe-item9 circle{display: block; animation: dash 3s forwards;}
+
+/* blue그리기 */
+#tic-tac-toe1-blue:checked~.container .tic-tac-toe-item1 line,
+#tic-tac-toe2-blue:checked~.container .tic-tac-toe-item2 line,
+#tic-tac-toe3-blue:checked~.container .tic-tac-toe-item3 line,
+#tic-tac-toe4-blue:checked~.container .tic-tac-toe-item4 line,
+#tic-tac-toe5-blue:checked~.container .tic-tac-toe-item5 line,
+#tic-tac-toe6-blue:checked~.container .tic-tac-toe-item6 line,
+#tic-tac-toe7-blue:checked~.container .tic-tac-toe-item7 line,
+#tic-tac-toe8-blue:checked~.container .tic-tac-toe-item8 line,
+#tic-tac-toe9-blue:checked~.container .tic-tac-toe-item9 line{display: block; animation: dash 6s forwards;}
+
+
+@keyframes dash {
+    from {stroke-dashoffset: 1000;}
+    to {stroke-dashoffset: 0;}
+  }

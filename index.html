@@ -1,17 +1,166 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="tic tac toe"
-    />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>tic tac toe</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="tic tac toe" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>tic tac toe</title>
+</head>
+
+<body>
+  <div id="root">
+    <form action="">
+      <input type="radio" name="tic-tac-toe1" id="tic-tac-toe1-red">
+      <input type="radio" name="tic-tac-toe1" id="tic-tac-toe1-blue">
+
+      <input type="radio" name="tic-tac-toe2" id="tic-tac-toe2-red">
+      <input type="radio" name="tic-tac-toe2" id="tic-tac-toe2-blue">
+      
+      <input type="radio" name="tic-tac-toe3" id="tic-tac-toe3-red">
+      <input type="radio" name="tic-tac-toe3" id="tic-tac-toe3-blue">
+      
+      <input type="radio" name="tic-tac-toe4" id="tic-tac-toe4-red">
+      <input type="radio" name="tic-tac-toe4" id="tic-tac-toe4-blue">
+      
+      <input type="radio" name="tic-tac-toe5" id="tic-tac-toe5-red">
+      <input type="radio" name="tic-tac-toe5" id="tic-tac-toe5-blue">
+      
+      <input type="radio" name="tic-tac-toe6" id="tic-tac-toe6-red">
+      <input type="radio" name="tic-tac-toe6" id="tic-tac-toe6-blue">
+      
+      <input type="radio" name="tic-tac-toe7" id="tic-tac-toe7-red">
+      <input type="radio" name="tic-tac-toe7" id="tic-tac-toe7-blue">
+      
+      <input type="radio" name="tic-tac-toe8" id="tic-tac-toe8-red">
+      <input type="radio" name="tic-tac-toe8" id="tic-tac-toe8-blue">
+      
+      
+      <input type="radio" name="tic-tac-toe9" id="tic-tac-toe9-red">
+      <input type="radio" name="tic-tac-toe9" id="tic-tac-toe9-blue">
+      
+      
+      <h2 class="title">tic tac toe</h2>
+      <div class="container grid">
+        
+        <div class="tic-tac-toe-item1 item">
+          <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe1-red" class="item1-red red"></label>
+        <label for="tic-tac-toe1-blue" class="item1-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item2 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe2-red" class="item2-red red"></label>
+        <label for="tic-tac-toe2-blue" class="item2-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item3 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe3-red" class="item3-red red"></label>
+        <label for="tic-tac-toe3-blue" class="item3-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item4 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe4-red" class="item4-red red"></label>
+        <label for="tic-tac-toe4-blue" class="item4-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item5 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe5-red" class="item5-red red"></label>
+        <label for="tic-tac-toe5-blue" class="item5-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item6 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe6-red" class="item6-red red"></label>
+        <label for="tic-tac-toe6-blue" class="item6-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item7 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe7-red" class="item7-red red"></label>
+        <label for="tic-tac-toe7-blue" class="item7-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item8 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+          
+        </svg>
+        <label for="tic-tac-toe8-red" class="item8-red red"></label>
+        <label for="tic-tac-toe8-blue" class="item8-blue blue"></label>
+      </div>
+      
+      <div class="tic-tac-toe-item9 item">
+        <svg width="200" height="200" class="animationSvg">
+          <line class="line" x1="20" y1="20" x2="180" y2="180" stroke="blue" stroke-width="10" />
+          <line class="line" x1="180" y1="20" x2="20" y2="180" stroke="blue" stroke-width="10" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="red" stroke-width="10" />
+        </svg>
+        <label for="tic-tac-toe9-red" class="item9-red red"></label>
+        <label for="tic-tac-toe9-blue" class="item9-blue blue"></label>
+      </div>
+      <input type="reset" id="reset">
+      <div class="gameover flex">
+        <h2 class="endTxt redEnd">Red승리</h2>
+        <h2 class="endTxt blueEnd">Blue승리</h2>
+        <label for="reset" class="reset">다시시작</label>
+      </div>
+
+      <div class="endLine">
+        <svg width="600" height="600" class="">
+          <line class="line1" x1="10" y1="100" x2="590" y2="100" stroke="#000" stroke-width="10"/>
+          <line class="line2" x1="10" y1="300" x2="590" y2="300" stroke="#000" stroke-width="10"/>
+          <line class="line3" x1="10" y1="500" x2="590" y2="500" stroke="#000" stroke-width="10"/>
+          
+          <line class="line4" x1="100" y1="10" x2="100" y2="590" stroke="#000" stroke-width="10"/>
+          <line class="line5" x1="300" y1="10" x2="300" y2="590" stroke="#000" stroke-width="10"/>
+          <line class="line6" x1="500" y1="10" x2="500" y2="590" stroke="#000" stroke-width="10"/>
+          
+          <line class="line7" x1="10" y1="10" x2="590" y2="590" stroke="#000" stroke-width="10"/>
+          <line class="line8" x1="590" y1="10" x2="10" y2="590" stroke="#000" stroke-width="10"/>
+
+        </svg>
+      </div>
+
+    </div>
+  </form>
+  </div>
+</body>
+
 </html>
