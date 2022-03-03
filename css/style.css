@@ -32,6 +32,9 @@ body {
 #userX:checked ~ .user > .userX {
     display: none;
 }
+.userX {
+    display: none;
+}
 
 .boardO {
     border: 1px solid black;
@@ -41,7 +44,7 @@ body {
     display: grid;
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px;
-    display: none;
+    /* display: none; */
 }
 .boardO > label {
     border: 1px solid black;
@@ -62,7 +65,13 @@ body {
 #OBox1:checked ~ .container .circle1 {
     animation: stroke 2s ease-out forwards;
 }
-
+#OBox0:checked ~ .container .userO {
+    display: none;
+}
+#OBox0:checked ~ .container .userX {
+    display: block;
+}
+/* #OBox0:checked ~ .container  */
 .boardX {
     border: 1px solid black;
     width: 600px;
@@ -71,33 +80,25 @@ body {
     display: grid;
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px;
-    /* display: none; */
+    display: none;
 }
 .boardX > label {
     border: 1px solid black;
 }
-/* @keyframes dash {
+.XLine0 {
+    stroke: #333;
+    stroke-dasharray: 1000;
+    display: none;
+}
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
     to {
         stroke-dashoffset: 0;
     }
-} */
-/* .XA0,
-.XB0 {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+}
+#XBox0:checked ~ .container .XLine0 {
+    display: block;
     animation: dash 2s ease-out forwards;
-} */
-.XBox0 {
-    position: relative;
 }
-.XLineA0 {
-    position: absolute;
-    /* display: none; */
-}
-.XLineB0 {
-    position: absolute;
-    /* display: none; */
-}
-/* #XBox0:checked ~ .container .XA0 {
-    animation: stroke 2s ease-out forwards;
-} */
