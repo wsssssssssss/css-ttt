@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+/* input {
+    display: none;
+} */
+.user {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 64px;
+}
+.userO {
+    text-align: center;
+    line-height: 100px;
+}
+.userX {
+    text-align: center;
+    line-height: 100px;
+}
+#userO:checked ~ .user > .userO {
+    display: none;
+}
+#userX:checked ~ .user > .userX {
+    display: none;
+}
+
+.boardO {
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    display: none;
+}
+.boardO > label {
+    border: 1px solid black;
+}
+.circle0,
+.circle1 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+@keyframes stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+#OBox0:checked ~ .container .circle0 {
+    animation: stroke 2s ease-out forwards;
+}
+#OBox1:checked ~ .container .circle1 {
+    animation: stroke 2s ease-out forwards;
+}
+
+.boardX {
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    /* display: none; */
+}
+.boardX > label {
+    border: 1px solid black;
+}
+/* @keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+} */
+/* .XA0,
+.XB0 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2s ease-out forwards;
+} */
+.XBox0 {
+    position: relative;
+}
+.XLineA0 {
+    position: absolute;
+    /* display: none; */
+}
+.XLineB0 {
+    position: absolute;
+    /* display: none; */
+}
+/* #XBox0:checked ~ .container .XA0 {
+    animation: stroke 2s ease-out forwards;
+} */
