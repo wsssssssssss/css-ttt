@@ -4,41 +4,14 @@
     box-sizing: border-box;
     color: inherit;
 }
-
 html,
 body {
     width: 100vw;
     height: 100vh;
 }
-
 /* input {
     display: none;
 } */
-.user {
-    width: 400px;
-    height: 100px;
-    margin: 0 auto;
-    font-size: 64px;
-}
-
-.userO {
-    text-align: center;
-    line-height: 100px;
-}
-
-.userX {
-    text-align: center;
-    line-height: 100px;
-}
-
-#userO:checked~.user>.userO {
-    display: none;
-}
-
-#userX:checked~.user>.userX {
-    display: none;
-}
-
 .board {
     border: 1px solid #333;
     width: 600px;
@@ -48,538 +21,89 @@ body {
     grid-template-rows: 200px 200px 200px;
     margin: 0 auto;
 }
-
-.board > label {
+.box0,
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8 {
     border: 1px solid #333;
 }
-
 circle {
     stroke: #333;
     stroke-width: 2;
     fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
 }
-
 path {
     stroke: #333;
     stroke-width: 2;
     stroke-dasharray: 1000;
 }
-
-circle {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-}
-
-.user > .userX {
-    display: none;
-}
-
-#x0,
-#x1,
-#x2,
-#x3,
-#x4,
-#x5,
-#x6,
-#x7,
-#x8,
-#x9 {
-    display: none;
-}
-
-#clickO0:checked~.board #circle0,
-#clickO1:checked~.board #circle1,
-#clickO2:checked~.board #circle2,
-#clickO3:checked~.board #circle3,
-#clickO4:checked~.board #circle4,
-#clickO5:checked~.board #circle5,
-#clickO6:checked~.board #circle6,
-#clickO7:checked~.board #circle7,
-#clickO8:checked~.board #circle8 {
+#o0:checked ~ .board > .box0 circle,
+#o1:checked ~ .board > .box1 circle,
+#o2:checked ~ .board > .box2 circle,
+#o3:checked ~ .board > .box3 circle,
+#o4:checked ~ .board > .box4 circle,
+#o5:checked ~ .board > .box5 circle,
+#o6:checked ~ .board > .box6 circle,
+#o7:checked ~ .board > .box7 circle,
+#o8:checked ~ .board > .box8 circle {
     animation: stroke 2s ease-out forwards;
 }
-
-#clickX0:checked~.board #x0,
-#clickX1:checked~.board #x1,
-#clickX2:checked~.board #x2,
-#clickX3:checked~.board #x3,
-#clickX4:checked~.board #x4,
-#clickX5:checked~.board #x5,
-#clickX6:checked~.board #x6,
-#clickX7:checked~.board #x7,
-#clickX8:checked~.board #x8 {
+#x0:checked ~ .board > .box0 .drawX > svg,
+#x1:checked ~ .board > .box1 .drawX > svg,
+#x2:checked ~ .board > .box2 .drawX > svg,
+#x3:checked ~ .board > .box3 .drawX > svg,
+#x4:checked ~ .board > .box4 .drawX > svg,
+#x5:checked ~ .board > .box5 .drawX > svg,
+#x6:checked ~ .board > .box6 .drawX > svg,
+#x7:checked ~ .board > .box7 .drawX > svg,
+#x8:checked ~ .board > .box8 .drawX > svg {
     display: block;
     animation: dash 2s ease-out forwards;
 }
-
 @keyframes stroke {
     to {
         stroke-dashoffset: 0;
     }
 }
-
 @keyframes dash {
     from {
         stroke-dashoffset: 1000;
     }
-
     to {
         stroke-dashoffset: 0;
     }
 }
-
-.boX0,
-.boX1,
-.boX2,
-.boX3,
-.boX4,
-.boX5,
-.boX6,
-.boX7,
-.boX8 {
+.user {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 64px;
+}
+.userO {
+    text-align: center;
+    line-height: 100px;
+}
+.userX {
+    text-align: center;
+    line-height: 100px;
     display: none;
 }
-
-#clickO0:checked ~ .user > .userO,
-#clickO1:checked ~ .user > .userO,
-#clickO2:checked ~ .user > .userO,
-#clickO3:checked ~ .user > .userO,
-#clickO4:checked ~ .user > .userO,
-#clickO5:checked ~ .user > .userO,
-#clickO6:checked ~ .user > .userO,
-#clickO7:checked ~ .user > .userO,
-#clickO8:checked ~ .user > .userO {
+.drawX {
     display: none;
 }
-
-#clickO0:checked ~ .user > .userX,
-#clickO1:checked ~ .user > .userX,
-#clickO2:checked ~ .user > .userX,
-#clickO3:checked ~ .user > .userX,
-#clickO4:checked ~ .user > .userX,
-#clickO5:checked ~ .user > .userX,
-#clickO6:checked ~ .user > .userX,
-#clickO7:checked ~ .user > .userX,
-#clickO8:checked ~ .user > .userX {
-    display: block;
-}
-
-#clickX0:checked ~ .user > .userX,
-#clickX1:checked ~ .user > .userX,
-#clickX2:checked ~ .user > .userX,
-#clickX3:checked ~ .user > .userX,
-#clickX4:checked ~ .user > .userX,
-#clickX5:checked ~ .user > .userX,
-#clickX6:checked ~ .user > .userX,
-#clickX7:checked ~ .user > .userX,
-#clickX8:checked ~ .user > .userX {
+input:checked ~ .board .drawX {
     display: none;
 }
-
-#clickX0:checked ~ .user > .userO,
-#clickX1:checked ~ .user > .userO,
-#clickX2:checked ~ .user > .userO,
-#clickX3:checked ~ .user > .userO,
-#clickX4:checked ~ .user > .userO,
-#clickX5:checked ~ .user > .userO,
-#clickX6:checked ~ .user > .userO,
-#clickX7:checked ~ .user > .userO,
-#clickX8:checked ~ .user > .userO {
-    display: block;
-}
-
-#clickO0:checked ~ .board > .bOx1,
-#clickO0:checked ~ .board > .bOx2,
-#clickO0:checked ~ .board > .bOx3,
-#clickO0:checked ~ .board > .bOx4,
-#clickO0:checked ~ .board > .bOx5,
-#clickO0:checked ~ .board > .bOx6,
-#clickO0:checked ~ .board > .bOx7,
-#clickO0:checked ~ .board > .bOx8 {
+input:checked ~ input:checked ~ .board .drawO {
     display: none;
 }
-
-#clickO0:checked ~ .board > .boX1,
-#clickO0:checked ~ .board > .boX2,
-#clickO0:checked ~ .board > .boX3,
-#clickO0:checked ~ .board > .boX4,
-#clickO0:checked ~ .board > .boX5,
-#clickO0:checked ~ .board > .boX6,
-#clickO0:checked ~ .board > .boX7,
-#clickO0:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO1:checked ~ .board > .bOx0,
-#clickO1:checked ~ .board > .bOx2,
-#clickO1:checked ~ .board > .bOx3,
-#clickO1:checked ~ .board > .bOx4,
-#clickO1:checked ~ .board > .bOx5,
-#clickO1:checked ~ .board > .bOx6,
-#clickO1:checked ~ .board > .bOx7,
-#clickO1:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO1:checked ~ .board > .boX0,
-#clickO1:checked ~ .board > .boX2,
-#clickO1:checked ~ .board > .boX3,
-#clickO1:checked ~ .board > .boX4,
-#clickO1:checked ~ .board > .boX5,
-#clickO1:checked ~ .board > .boX6,
-#clickO1:checked ~ .board > .boX7,
-#clickO1:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO2:checked ~ .board > .bOx0,
-#clickO2:checked ~ .board > .bOx1,
-#clickO2:checked ~ .board > .bOx3,
-#clickO2:checked ~ .board > .bOx4,
-#clickO2:checked ~ .board > .bOx5,
-#clickO2:checked ~ .board > .bOx6,
-#clickO2:checked ~ .board > .bOx7,
-#clickO2:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO2:checked ~ .board > .boX0,
-#clickO2:checked ~ .board > .boX1,
-#clickO2:checked ~ .board > .boX3,
-#clickO2:checked ~ .board > .boX4,
-#clickO2:checked ~ .board > .boX5,
-#clickO2:checked ~ .board > .boX6,
-#clickO2:checked ~ .board > .boX7,
-#clickO2:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO3:checked ~ .board > .bOx0,
-#clickO3:checked ~ .board > .bOx1,
-#clickO3:checked ~ .board > .bOx2,
-#clickO3:checked ~ .board > .bOx4,
-#clickO3:checked ~ .board > .bOx5,
-#clickO3:checked ~ .board > .bOx6,
-#clickO3:checked ~ .board > .bOx7,
-#clickO3:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO3:checked ~ .board > .boX0,
-#clickO3:checked ~ .board > .boX1,
-#clickO3:checked ~ .board > .boX2,
-#clickO3:checked ~ .board > .boX4,
-#clickO3:checked ~ .board > .boX5,
-#clickO3:checked ~ .board > .boX6,
-#clickO3:checked ~ .board > .boX7,
-#clickO3:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO4:checked ~ .board > .bOx0,
-#clickO4:checked ~ .board > .bOx1,
-#clickO4:checked ~ .board > .bOx2,
-#clickO4:checked ~ .board > .bOx3,
-#clickO4:checked ~ .board > .bOx5,
-#clickO4:checked ~ .board > .bOx6,
-#clickO4:checked ~ .board > .bOx7,
-#clickO4:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO4:checked ~ .board > .boX0,
-#clickO4:checked ~ .board > .boX1,
-#clickO4:checked ~ .board > .boX2,
-#clickO4:checked ~ .board > .boX3,
-#clickO4:checked ~ .board > .boX5,
-#clickO4:checked ~ .board > .boX6,
-#clickO4:checked ~ .board > .boX7,
-#clickO4:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO5:checked ~ .board > .bOx0,
-#clickO5:checked ~ .board > .bOx1,
-#clickO5:checked ~ .board > .bOx2,
-#clickO5:checked ~ .board > .bOx3,
-#clickO5:checked ~ .board > .bOx4,
-#clickO5:checked ~ .board > .bOx6,
-#clickO5:checked ~ .board > .bOx7,
-#clickO5:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO5:checked ~ .board > .boX0,
-#clickO5:checked ~ .board > .boX1,
-#clickO5:checked ~ .board > .boX2,
-#clickO5:checked ~ .board > .boX3,
-#clickO5:checked ~ .board > .boX4,
-#clickO5:checked ~ .board > .boX6,
-#clickO5:checked ~ .board > .boX7,
-#clickO5:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO6:checked ~ .board > .bOx0,
-#clickO6:checked ~ .board > .bOx1,
-#clickO6:checked ~ .board > .bOx2,
-#clickO6:checked ~ .board > .bOx3,
-#clickO6:checked ~ .board > .bOx4,
-#clickO6:checked ~ .board > .bOx5,
-#clickO6:checked ~ .board > .bOx7,
-#clickO6:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO6:checked ~ .board > .boX0,
-#clickO6:checked ~ .board > .boX1,
-#clickO6:checked ~ .board > .boX2,
-#clickO6:checked ~ .board > .boX3,
-#clickO6:checked ~ .board > .boX4,
-#clickO6:checked ~ .board > .boX5,
-#clickO6:checked ~ .board > .boX7,
-#clickO6:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO7:checked ~ .board > .bOx0,
-#clickO7:checked ~ .board > .bOx1,
-#clickO7:checked ~ .board > .bOx2,
-#clickO7:checked ~ .board > .bOx3,
-#clickO7:checked ~ .board > .bOx4,
-#clickO7:checked ~ .board > .bOx5,
-#clickO7:checked ~ .board > .bOx6,
-#clickO7:checked ~ .board > .bOx8 {
-    display: none;
-}
-
-#clickO7:checked ~ .board > .boX0,
-#clickO7:checked ~ .board > .boX1,
-#clickO7:checked ~ .board > .boX2,
-#clickO7:checked ~ .board > .boX3,
-#clickO7:checked ~ .board > .boX4,
-#clickO7:checked ~ .board > .boX5,
-#clickO7:checked ~ .board > .boX6,
-#clickO7:checked ~ .board > .boX8 {
-    display: block;
-}
-
-#clickO8:checked ~ .board > .bOx0,
-#clickO8:checked ~ .board > .bOx1,
-#clickO8:checked ~ .board > .bOx2,
-#clickO8:checked ~ .board > .bOx3,
-#clickO8:checked ~ .board > .bOx4,
-#clickO8:checked ~ .board > .bOx5,
-#clickO8:checked ~ .board > .bOx6,
-#clickO8:checked ~ .board > .bOx7 {
-    display: none;
-}
-
-#clickO8:checked ~ .board > .boX0,
-#clickO8:checked ~ .board > .boX1,
-#clickO8:checked ~ .board > .boX2,
-#clickO8:checked ~ .board > .boX3,
-#clickO8:checked ~ .board > .boX4,
-#clickO8:checked ~ .board > .boX5,
-#clickO8:checked ~ .board > .boX6,
-#clickO8:checked ~ .board > .boX7 {
-    display: block;
-}
-
-#clickX0:checked ~ .board > .boX1,
-#clickX0:checked ~ .board > .boX2,
-#clickX0:checked ~ .board > .boX3,
-#clickX0:checked ~ .board > .boX4,
-#clickX0:checked ~ .board > .boX5,
-#clickX0:checked ~ .board > .boX6,
-#clickX0:checked ~ .board > .boX7,
-#clickX0:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX0:checked ~ .board > .bOx1,
-#clickX0:checked ~ .board > .bOx2,
-#clickX0:checked ~ .board > .bOx3,
-#clickX0:checked ~ .board > .bOx4,
-#clickX0:checked ~ .board > .bOx5,
-#clickX0:checked ~ .board > .bOx6,
-#clickX0:checked ~ .board > .bOx7,
-#clickX0:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX1:checked ~ .board > .boX0,
-#clickX1:checked ~ .board > .boX2,
-#clickX1:checked ~ .board > .boX3,
-#clickX1:checked ~ .board > .boX4,
-#clickX1:checked ~ .board > .boX5,
-#clickX1:checked ~ .board > .boX6,
-#clickX1:checked ~ .board > .boX7,
-#clickX1:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX1:checked ~ .board > .bOx0,
-#clickX1:checked ~ .board > .bOx2,
-#clickX1:checked ~ .board > .bOx3,
-#clickX1:checked ~ .board > .bOx4,
-#clickX1:checked ~ .board > .bOx5,
-#clickX1:checked ~ .board > .bOx6,
-#clickX1:checked ~ .board > .bOx7,
-#clickX1:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX2:checked ~ .board > .boX0,
-#clickX2:checked ~ .board > .boX1,
-#clickX2:checked ~ .board > .boX3,
-#clickX2:checked ~ .board > .boX4,
-#clickX2:checked ~ .board > .boX5,
-#clickX2:checked ~ .board > .boX6,
-#clickX2:checked ~ .board > .boX7,
-#clickX2:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX2:checked ~ .board > .bOx0,
-#clickX2:checked ~ .board > .bOx1,
-#clickX2:checked ~ .board > .bOx3,
-#clickX2:checked ~ .board > .bOx4,
-#clickX2:checked ~ .board > .bOx5,
-#clickX2:checked ~ .board > .bOx6,
-#clickX2:checked ~ .board > .bOx7,
-#clickX2:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX3:checked ~ .board > .boX0,
-#clickX3:checked ~ .board > .boX1,
-#clickX3:checked ~ .board > .boX2,
-#clickX3:checked ~ .board > .boX4,
-#clickX3:checked ~ .board > .boX5,
-#clickX3:checked ~ .board > .boX6,
-#clickX3:checked ~ .board > .boX7,
-#clickX3:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX3:checked ~ .board > .bOx0,
-#clickX3:checked ~ .board > .bOx1,
-#clickX3:checked ~ .board > .bOx2,
-#clickX3:checked ~ .board > .bOx4,
-#clickX3:checked ~ .board > .bOx5,
-#clickX3:checked ~ .board > .bOx6,
-#clickX3:checked ~ .board > .bOx7,
-#clickX3:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX4:checked ~ .board > .boX0,
-#clickX4:checked ~ .board > .boX1,
-#clickX4:checked ~ .board > .boX2,
-#clickX4:checked ~ .board > .boX3,
-#clickX4:checked ~ .board > .boX5,
-#clickX4:checked ~ .board > .boX6,
-#clickX4:checked ~ .board > .boX7,
-#clickX4:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX4:checked ~ .board > .bOx0,
-#clickX4:checked ~ .board > .bOx1,
-#clickX4:checked ~ .board > .bOx2,
-#clickX4:checked ~ .board > .bOx3,
-#clickX4:checked ~ .board > .bOx5,
-#clickX4:checked ~ .board > .bOx6,
-#clickX4:checked ~ .board > .bOx7,
-#clickX4:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX5:checked ~ .board > .boX0,
-#clickX5:checked ~ .board > .boX1,
-#clickX5:checked ~ .board > .boX2,
-#clickX5:checked ~ .board > .boX3,
-#clickX5:checked ~ .board > .boX4,
-#clickX5:checked ~ .board > .boX6,
-#clickX5:checked ~ .board > .boX7,
-#clickX5:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX5:checked ~ .board > .bOx0,
-#clickX5:checked ~ .board > .bOx1,
-#clickX5:checked ~ .board > .bOx2,
-#clickX5:checked ~ .board > .bOx3,
-#clickX5:checked ~ .board > .bOx4,
-#clickX5:checked ~ .board > .bOx6,
-#clickX5:checked ~ .board > .bOx7,
-#clickX5:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX6:checked ~ .board > .boX0,
-#clickX6:checked ~ .board > .boX1,
-#clickX6:checked ~ .board > .boX2,
-#clickX6:checked ~ .board > .boX3,
-#clickX6:checked ~ .board > .boX4,
-#clickX6:checked ~ .board > .boX5,
-#clickX6:checked ~ .board > .boX7,
-#clickX6:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX6:checked ~ .board > .bOx0,
-#clickX6:checked ~ .board > .bOx1,
-#clickX6:checked ~ .board > .bOx2,
-#clickX6:checked ~ .board > .bOx3,
-#clickX6:checked ~ .board > .bOx4,
-#clickX6:checked ~ .board > .bOx5,
-#clickX6:checked ~ .board > .bOx7,
-#clickX6:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX7:checked ~ .board > .boX0,
-#clickX7:checked ~ .board > .boX1,
-#clickX7:checked ~ .board > .boX2,
-#clickX7:checked ~ .board > .boX3,
-#clickX7:checked ~ .board > .boX4,
-#clickX7:checked ~ .board > .boX5,
-#clickX7:checked ~ .board > .boX6,
-#clickX7:checked ~ .board > .boX8 {
-    display: none;
-}
-
-#clickX7:checked ~ .board > .bOx0,
-#clickX7:checked ~ .board > .bOx1,
-#clickX7:checked ~ .board > .bOx2,
-#clickX7:checked ~ .board > .bOx3,
-#clickX7:checked ~ .board > .bOx4,
-#clickX7:checked ~ .board > .bOx5,
-#clickX7:checked ~ .board > .bOx6,
-#clickX7:checked ~ .board > .bOx8 {
-    display: block;
-}
-
-#clickX8:checked ~ .board > .boX0,
-#clickX8:checked ~ .board > .boX1,
-#clickX8:checked ~ .board > .boX2,
-#clickX8:checked ~ .board > .boX3,
-#clickX8:checked ~ .board > .boX4,
-#clickX8:checked ~ .board > .boX5,
-#clickX8:checked ~ .board > .boX6,
-#clickX8:checked ~ .board > .boX7 {
-    display: none;
-}
-
-#clickX8:checked ~ .board > .bOx0,
-#clickX8:checked ~ .board > .bOx1,
-#clickX8:checked ~ .board > .bOx2,
-#clickX8:checked ~ .board > .bOx3,
-#clickX8:checked ~ .board > .bOx4,
-#clickX8:checked ~ .board > .bOx5,
-#clickX8:checked ~ .board > .bOx6,
-#clickX8:checked ~ .board > .bOx7 {
+input:checked ~ input:checked ~ .board .drawX {
     display: block;
 }
