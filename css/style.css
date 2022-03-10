@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+html,
+body,
+#root {
+    width: 100vw;
+    height: 100vh;
+    color: #333;
+}
+.grid {
+    display: grid;
+}
+input {
+    display: none;
+}
+.board {
+    position: relative;
+    border: 1px solid #333;
+    width: 600px;
+    height: 600px;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    margin: 0 auto;
+}
+.board > div {
+    border: 1px solid #333;
+}
+circle {
+    fill: none;
+}
+#o0:checked ~ .board > .box0 circle,
+#o1:checked ~ .board > .box1 circle,
+#o2:checked ~ .board > .box2 circle,
+#o3:checked ~ .board > .box3 circle,
+#o4:checked ~ .board > .box4 circle,
+#o5:checked ~ .board > .box5 circle,
+#o6:checked ~ .board > .box6 circle,
+#o7:checked ~ .board > .box7 circle,
+#o8:checked ~ .board > .box8 circle {
+    stroke: #333;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: stroke 2s ease-out forwards;
+}
+#x0:checked ~ .board > .box0 path,
+#x1:checked ~ .board > .box1 path,
+#x2:checked ~ .board > .box2 path,
+#x3:checked ~ .board > .box3 path,
+#x4:checked ~ .board > .box4 path,
+#x5:checked ~ .board > .box5 path,
+#x6:checked ~ .board > .box6 path,
+#x7:checked ~ .board > .box7 path,
+#x8:checked ~ .board > .box8 path {
+    stroke: #333;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    animation: dash 2s ease-out forwards;
+}
+@keyframes stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.state {
+    width: 400px;
+    height: 100px;
+    margin: 40px auto;
+    font-size: 64px;
+    position: relative;
+}
+.userO,
+.userX,
+.winO,
+.winX,
+.draw {
+    text-align: center;
+    line-height: 100px;
+    width: 400px;
+    position: absolute;
+}
+.userX,
+.winO,
+.winX,
+.draw {
+    display: none;
+}
+
+.label-O-0,
+.label-X-0 {
+    position: absolute;
+    top: 1px;
+    bottom: 399px;
+    left: 1px;
+    right: 399px;
+}
+.label-O-1,
+.label-X-1 {
+    position: absolute;
+    top: 1px;
+    bottom: 399px;
+    left: 201px;
+    right: 199px;
+}
+.label-O-2,
+.label-X-2 {
+    position: absolute;
+    top: 1px;
+    bottom: 399px;
+    left: 401px;
+    right: 0;
+}
+.label-O-3,
+.label-X-3 {
+    position: absolute;
+    top: 201px;
+    bottom: 199px;
+    left: 1px;
+    right: 399px;
+}
+.label-O-4,
+.label-X-4 {
+    position: absolute;
+    top: 201px;
+    bottom: 199px;
+    left: 201px;
+    right: 199px;
+}
+.label-O-5,
+.label-X-5 {
+    position: absolute;
+    top: 201px;
+    bottom: 199px;
+    left: 401px;
+    right: 0;
+}
+.label-O-6,
+.label-X-6 {
+    position: absolute;
+    top: 401px;
+    bottom: 0;
+    left: 1px;
+    right: 399px;
+}
+.label-O-7,
+.label-X-7 {
+    position: absolute;
+    top: 401px;
+    bottom: 0;
+    left: 201px;
+    right: 199px;
+}
+.label-O-8,
+.label-X-8 {
+    position: absolute;
+    top: 401px;
+    bottom: 0;
+    left: 401px;
+    right: 0;
+}
+input:checked ~ .board .label-O-0,
+input:checked ~ .board .label-O-1,
+input:checked ~ .board .label-O-2,
+input:checked ~ .board .label-O-3,
+input:checked ~ .board .label-O-4,
+input:checked ~ .board .label-O-5,
+input:checked ~ .board .label-O-6,
+input:checked ~ .board .label-O-7,
+input:checked ~ .board .label-O-8 {
+    z-index: -1;
+}
+input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: auto;
+}
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: -1;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: auto;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: -1;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: auto;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: -1;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-0,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-1,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-2,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-3,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-4,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-5,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-6,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-7,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .board .label-O-8 {
+    z-index: auto;
+}
+input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO {
+    display: none;
+}
+input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userO,
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .userX {
+    display: block;
+}
+input[name="box0"]:checked ~ .board .box0,
+input[name="box1"]:checked ~ .board .box1,
+input[name="box2"]:checked ~ .board .box2,
+input[name="box3"]:checked ~ .board .box3,
+input[name="box4"]:checked ~ .board .box4,
+input[name="box5"]:checked ~ .board .box5,
+input[name="box6"]:checked ~ .board .box6,
+input[name="box7"]:checked ~ .board .box7,
+input[name="box8"]:checked ~ .board .box8 {
+    z-index: -1;
+}
+.win {
+    position: absolute;
+    z-index: -1;
+}
+input[id="o0"]:checked ~ input[id="o1"]:checked ~ input[id="o2"]:checked ~ .board .win012,
+input[id="x0"]:checked ~ input[id="x1"]:checked ~ input[id="x2"]:checked ~ .board .win012,
+input[id="o3"]:checked ~ input[id="o4"]:checked ~ input[id="o5"]:checked ~ .board .win345,
+input[id="x3"]:checked ~ input[id="x4"]:checked ~ input[id="x5"]:checked ~ .board .win345,
+input[id="o6"]:checked ~ input[id="o7"]:checked ~ input[id="o8"]:checked ~ .board .win678,
+input[id="x6"]:checked ~ input[id="x7"]:checked ~ input[id="x8"]:checked ~ .board .win678,
+input[id="o0"]:checked ~ input[id="o3"]:checked ~ input[id="o6"]:checked ~ .board .win036,
+input[id="x0"]:checked ~ input[id="x3"]:checked ~ input[id="x6"]:checked ~ .board .win036,
+input[id="o1"]:checked ~ input[id="o4"]:checked ~ input[id="o7"]:checked ~ .board .win147,
+input[id="x1"]:checked ~ input[id="x4"]:checked ~ input[id="x7"]:checked ~ .board .win147,
+input[id="o2"]:checked ~ input[id="o5"]:checked ~ input[id="o8"]:checked ~ .board .win258,
+input[id="x2"]:checked ~ input[id="x5"]:checked ~ input[id="x8"]:checked ~ .board .win258,
+input[id="o0"]:checked ~ input[id="o4"]:checked ~ input[id="o8"]:checked ~ .board .win048,
+input[id="x0"]:checked ~ input[id="x4"]:checked ~ input[id="x8"]:checked ~ .board .win048,
+input[id="o2"]:checked ~ input[id="o4"]:checked ~ input[id="o6"]:checked ~ .board .win246,
+input[id="x2"]:checked ~ input[id="x4"]:checked ~ input[id="x6"]:checked ~ .board .win246 {
+    stroke: #f00;
+    stroke-width: 2px;
+    stroke-dasharray: 1000;
+    animation: dash 2s ease-out forwards;
+}
+input[id="o0"]:checked ~ input[id="o1"]:checked ~ input[id="o2"]:checked ~ .board > div,
+input[id="x0"]:checked ~ input[id="x1"]:checked ~ input[id="x2"]:checked ~ .board > div,
+input[id="o3"]:checked ~ input[id="o4"]:checked ~ input[id="o5"]:checked ~ .board > div,
+input[id="x3"]:checked ~ input[id="x4"]:checked ~ input[id="x5"]:checked ~ .board > div,
+input[id="o6"]:checked ~ input[id="o7"]:checked ~ input[id="o8"]:checked ~ .board > div,
+input[id="x6"]:checked ~ input[id="x7"]:checked ~ input[id="x8"]:checked ~ .board > div,
+input[id="o0"]:checked ~ input[id="o3"]:checked ~ input[id="o6"]:checked ~ .board > div,
+input[id="x0"]:checked ~ input[id="x3"]:checked ~ input[id="x6"]:checked ~ .board > div,
+input[id="o1"]:checked ~ input[id="o4"]:checked ~ input[id="o7"]:checked ~ .board > div,
+input[id="x1"]:checked ~ input[id="x4"]:checked ~ input[id="x7"]:checked ~ .board > div,
+input[id="o2"]:checked ~ input[id="o5"]:checked ~ input[id="o8"]:checked ~ .board > div,
+input[id="x2"]:checked ~ input[id="x5"]:checked ~ input[id="x8"]:checked ~ .board > div,
+input[id="o0"]:checked ~ input[id="o4"]:checked ~ input[id="o8"]:checked ~ .board > div,
+input[id="x0"]:checked ~ input[id="x4"]:checked ~ input[id="x8"]:checked ~ .board > div,
+input[id="o2"]:checked ~ input[id="o4"]:checked ~ input[id="o6"]:checked ~ .board > div,
+input[id="x2"]:checked ~ input[id="x4"]:checked ~ input[id="x6"]:checked ~ .board > div {
+    z-index: -1;
+}
+input[id="o0"]:checked ~ input[id="o1"]:checked ~ input[id="o2"]:checked ~ .state > .winO,
+input[id="o3"]:checked ~ input[id="o4"]:checked ~ input[id="o5"]:checked ~ .state > .winO,
+input[id="o6"]:checked ~ input[id="o7"]:checked ~ input[id="o8"]:checked ~ .state > .winO,
+input[id="o0"]:checked ~ input[id="o3"]:checked ~ input[id="o6"]:checked ~ .state > .winO,
+input[id="o1"]:checked ~ input[id="o4"]:checked ~ input[id="o7"]:checked ~ .state > .winO,
+input[id="o2"]:checked ~ input[id="o5"]:checked ~ input[id="o8"]:checked ~ .state > .winO,
+input[id="o0"]:checked ~ input[id="o4"]:checked ~ input[id="o8"]:checked ~ .state > .winO,
+input[id="o2"]:checked ~ input[id="o4"]:checked ~ input[id="o6"]:checked ~ .state > .winO {
+    display: block;
+    background: #fff;
+    z-index: 1;
+}
+input[id="x0"]:checked ~ input[id="x1"]:checked ~ input[id="x2"]:checked ~ .state > .winX,
+input[id="x3"]:checked ~ input[id="x4"]:checked ~ input[id="x5"]:checked ~ .state > .winX,
+input[id="x6"]:checked ~ input[id="x7"]:checked ~ input[id="x8"]:checked ~ .state > .winX,
+input[id="x0"]:checked ~ input[id="x3"]:checked ~ input[id="x6"]:checked ~ .state > .winX,
+input[id="x1"]:checked ~ input[id="x4"]:checked ~ input[id="x7"]:checked ~ .state > .winX,
+input[id="x2"]:checked ~ input[id="x5"]:checked ~ input[id="x8"]:checked ~ .state > .winX,
+input[id="x0"]:checked ~ input[id="x4"]:checked ~ input[id="x8"]:checked ~ .state > .winX,
+input[id="x2"]:checked ~ input[id="x4"]:checked ~ input[id="x6"]:checked ~ .state > .winX {
+    display: block;
+    background: #fff;
+    z-index: 1;
+}
+input[id="o0"]:checked ~ input[id="o1"]:checked ~ input[id="o2"]:checked ~ .state > .userX,
+input[id="o3"]:checked ~ input[id="o4"]:checked ~ input[id="o5"]:checked ~ .state > .userX,
+input[id="o6"]:checked ~ input[id="o7"]:checked ~ input[id="o8"]:checked ~ .state > .userX,
+input[id="o0"]:checked ~ input[id="o3"]:checked ~ input[id="o6"]:checked ~ .state > .userX,
+input[id="o1"]:checked ~ input[id="o4"]:checked ~ input[id="o7"]:checked ~ .state > .userX,
+input[id="o2"]:checked ~ input[id="o5"]:checked ~ input[id="o8"]:checked ~ .state > .userX,
+input[id="o0"]:checked ~ input[id="o4"]:checked ~ input[id="o8"]:checked ~ .state > .userX,
+input[id="o2"]:checked ~ input[id="o4"]:checked ~ input[id="o6"]:checked ~ .state > .userX {
+    display: none !important;
+}
+input[id="x0"]:checked ~ input[id="x1"]:checked ~ input[id="x2"]:checked ~ .state > .userO,
+input[id="x3"]:checked ~ input[id="x4"]:checked ~ input[id="x5"]:checked ~ .state > .userO,
+input[id="x6"]:checked ~ input[id="x7"]:checked ~ input[id="x8"]:checked ~ .state > .userO,
+input[id="x0"]:checked ~ input[id="x3"]:checked ~ input[id="x6"]:checked ~ .state > .userO,
+input[id="x1"]:checked ~ input[id="x4"]:checked ~ input[id="x7"]:checked ~ .state > .userO,
+input[id="x2"]:checked ~ input[id="x5"]:checked ~ input[id="x8"]:checked ~ .state > .userO,
+input[id="x0"]:checked ~ input[id="x4"]:checked ~ input[id="x8"]:checked ~ .state > .userO,
+input[id="x2"]:checked ~ input[id="x4"]:checked ~ input[id="x6"]:checked ~ .state > .userO {
+    display: none !important;
+}
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .state > .draw {
+    display: block;
+    background: #fff;
+}

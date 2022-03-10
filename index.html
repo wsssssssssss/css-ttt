@@ -1,17 +1,136 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="tic tac toe"
-    />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>tic tac toe</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="tic tac toe" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>tic tac toe</title>
+</head>
+
+<body>
+  <div id="root">
+    <input type="radio" name="box0" id="o0">
+    <input type="radio" name="box0" id="x0">
+    <input type="radio" name="box1" id="o1">
+    <input type="radio" name="box1" id="x1">
+    <input type="radio" name="box2" id="o2">
+    <input type="radio" name="box2" id="x2">
+    <input type="radio" name="box3" id="o3">
+    <input type="radio" name="box3" id="x3">
+    <input type="radio" name="box4" id="o4">
+    <input type="radio" name="box4" id="x4">
+    <input type="radio" name="box5" id="o5">
+    <input type="radio" name="box5" id="x5">
+    <input type="radio" name="box6" id="o6">
+    <input type="radio" name="box6" id="x6">
+    <input type="radio" name="box7" id="o7">
+    <input type="radio" name="box7" id="x7">
+    <input type="radio" name="box8" id="o8">
+    <input type="radio" name="box8" id="x8">
+    <div class="state">
+      <div class="userO">현재 유저: O</div>
+      <div class="userX">현재 유저: X</div>
+      <div class="winO">O 승리</div>
+      <div class="winX">X 승리</div>
+      <div class="draw">무승부</div>
+    </div>
+    <div class="board grid">
+      <div class="box0">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x0" class="label-X-0"></label>
+        <label for="o0" class="label-O-0"></label>
+      </div>
+      <div class="box1">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x1" class="label-X-1"></label>
+        <label for="o1" class="label-O-1"></label>
+      </div>
+      <div class="box2">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x2" class="label-X-2"></label>
+        <label for="o2" class="label-O-2"></label>
+      </div>
+      <div class="box3">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x3" class="label-X-3"></label>
+        <label for="o3" class="label-O-3"></label>
+      </div>
+      <div class="box4">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x4" class="label-X-4"></label>
+        <label for="o4" class="label-O-4"></label>
+      </div>
+      <div class="box5">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x5" class="label-X-5"></label>
+        <label for="o5" class="label-O-5"></label>
+      </div>
+      <div class="box6">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x6" class="label-X-6"></label>
+        <label for="o6" class="label-O-6"></label>
+      </div>
+      <div class="box7">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x7" class="label-X-7"></label>
+        <label for="o7" class="label-O-7"></label>
+      </div>
+      <div class="box8">
+        <svg height="200" width="200">
+          <circle cx="100" cy="100" r="75"/>
+          <path d="M25 25 L175 175"></path>
+          <path d="M175 25 L25 175"></path>
+        </svg>
+        <label for="x8" class="label-X-8"></label>
+        <label for="o8" class="label-O-8"></label>
+      </div>
+      <svg width="600" height="600" class="win">
+        <path d="M0 100 L600 100" class="win012"></path>
+        <path d="M0 300 L600 300" class="win345"></path>
+        <path d="M0 500 L600 500" class="win678"></path>
+        <path d="M100 0 L100 600" class="win036"></path>
+        <path d="M300 0 L300 600" class="win147"></path>
+        <path d="M500 0 L500 600" class="win258"></path>
+        <path d="M0 0 L600 600" class="win048"></path>
+        <path d="M600 0 L0 600" class="win246"></path>
+      </svg>
+    </div>
+  </div>
+</body>
+
 </html>
